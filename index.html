@@ -83,12 +83,12 @@
         let geoY = Math.round(100*e.latlng.lat )
 
         
-        const c = getCoordinates(geoX, geoY)// Get the URL from previous function
+        const playCoord = getCoordinates(geoX, geoY)// Get the URL from previous function
 
         popupWindow
           .setLatLng(e.latlng)// Set content of the popup Object
           .setContent(`
-          <iframe id="cryptovoxel" src="https://www.cryptovoxels.com/play${c}&mode=orbit" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:15rem; height:100%; min-height:10rem;" allowTransparency="true" sandbox="allow-scripts allow-same-origin">
+          <iframe id="cryptovoxel" src="https://www.cryptovoxels.com/play${playCoord}&mode=orbit" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:15rem; height:100%; min-height:10rem;" allowTransparency="true" sandbox="allow-scripts allow-same-origin">
           `)
           .openOn(CVmap)
         // Here the content is orbit mode (&mode=obrit) For more information on the flags you want go to https://www.cryptovoxels.com/docs/flags
