@@ -54,6 +54,17 @@
         id: 'cryptovoxels'
       }).addTo(CVmap)
 
+      var ocmIcon = L.icon({
+          iconUrl: 'OCM_marker.png',
+          shadowUrl: 'OCM_marker_shad.png',
+
+          iconSize:     [38, 95], // size of the icon
+          shadowSize:   [50, 64], // size of the shadow
+          iconAnchor:   [294, 808], // point of the icon which will correspond to marker's location
+          shadowAnchor: [55, 561],  // the same for the shadow
+      });
+      L.marker([1.80, 0.98], {icon: ocmIcon}).addTo(CVmap);
+
       var popupWindow = L.popup() /* create popup object */
 
       function getCoordinates (geoX, geoY) {
