@@ -11,8 +11,9 @@
 The map is initialized with an html div
 ```
 <div id="cvmap" style="height: 700px; position: relative; outline: none;">
+<!-- It is important that the leaflet map is in a "defined" size container Or that it has a defined size.-->
 ```
-*It is important that the leaflet map is in a "defined" size container Or that it has a defined size.*
+
 
 and the following script
 ```
