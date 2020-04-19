@@ -2,7 +2,7 @@
  An interactive map that displays in-world for Cryptovoxels by [Fayelure](https://twitter.com/Benjythebee), with resources from [Fayelure](https://cryptovoxels.com) and [Leaflet](https://leafletjs.com/).
 [See demo centered at Origin City Market](https://benjythebee.github.io/CV_interactive_map/index.html)
 <br>
-<img src="https://benjythebee.github.io/CV_interactive_map/img/Thumbnail.PNG" width="250">
+<center><img src="https://benjythebee.github.io/CV_interactive_map/img/Thumbnail.PNG" width="275"><center>
 
 The map is initialized with an html div
 ```
@@ -21,6 +21,7 @@ and the following script
 ```
 The function
 >SetView()
+
 has two arguments: 
 -One, an array [X,Y] defining the intial center. A positive X means it's east and a positive Y means north. 
 -The second argument is the initial zoom.
