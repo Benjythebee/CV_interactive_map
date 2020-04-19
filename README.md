@@ -50,7 +50,32 @@ The rest of the script element is for markers and popups
 
  ```
  <hr/>
- 
+ **UPDATE**
+
+ The map now shows info of the parcel by getting it from the Cryptovoxels API.
+
+ If you don't want to use the api call and convert it, you can use the files in the api folder.
+The JSON files in the api folder are geoJSON formatted. For example the parcels.owner&contributors.json file looks a bit like this:
+```
+{"parcels":[{
+  "type":"Feature",
+  "properties":{
+    "name":"Metaverse",
+    "id":1,
+    "address":"70 Block Fork",
+    "owner":"0xe5a994be9e94513bcb1a0a5991470d9fde380d26",
+    "owner_name":null,
+    "contributors":["0x4595ff64328faf80a8cf0d52355639984b6af23c",""]
+    },
+    "geometry":{
+      "type":"Polygon",
+      "coordinates":[[[0.15,0.02],[0.02,0.02],[0.02,0.2],[0.15,0.2],[0.15,0.02]]
+      ]
+      }
+      },...
+```
+You can have a look at app.js for how the call is made
+
 Note Cryptovoxels is in an iframe and has the flag "&mode=orbit". For more info on flags visit [the Cryptovoxels Documentation](https://www.cryptovoxels.com/docs/flags)
 You can edit the size of the iframe by editing the *style* tag in the HTML code.
 

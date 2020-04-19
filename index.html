@@ -46,6 +46,12 @@ margin:auto;
         width:100%;
         height:auto;
       }
+      .title_box{
+        width:100%;
+        height:auto;
+        padding-bottom:5%;
+        display:inline;
+      }
   </style>
 </head>
 <body>
@@ -114,15 +120,17 @@ margin:auto;
         let geoX = Math.round(100*e.latlng.lng )
         let geoY = Math.round(100*e.latlng.lat )
 
-        console.log(geoX, ' ' , geoY)
         const playCoord = getCoordinates(geoX, geoY)// Get the URL from previous function
 
         popupWindow
           .setLatLng(e.latlng)// Set content of the popup Object
-          .setContent(`
-          <iframe id="cryptovoxel" src="https://www.cryptovoxels.com/play${playCoord}&mode=orbit" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:15rem; height:100%; min-height:10rem;" allowTransparency="true" sandbox="allow-scripts allow-same-origin">
-          `)
+          .setContent(`<div class="container-fluid" style="display:inline-block;"> <div class="title_box" ><div class="title_name" style="text-align: left;float:left;"></div><div class="title_owner" style="text-align: right;"></div></div>
+          <div class="title_box" ><div class="" style="text-align: left;float:left;"></div><div class="collab_box" style="float:right;text-align: right;"></div></div>
+          <iframe id="cryptovoxel" src="https://www.cryptovoxels.com/play${playCoord}&mode=orbit" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:18rem; height:100%; min-height:7rem;" allowTransparency="true" sandbox="allow-scripts allow-same-origin">
+          </div>`)
           .openOn(CVmap)
+
+        
         // Here the content is orbit mode (&mode=obrit) For more information on the flags you want go to https://www.cryptovoxels.com/docs/flags
       }
       popupWindow.on('popupclose',e=>{
@@ -130,6 +138,16 @@ margin:auto;
     })
       CVmap.on('click', onMapClick)// Listen to clicks
     </script>
+<<<<<<< Updated upstream
+=======
+    <script src="app.js"></script>
+    <script>  $(() => {
+      $(window).on('load',() => {
+           app.getDataGET();
+          
+      })
+    })</script>
+>>>>>>> Stashed changes
     </body>
 
     <!--/container-->
