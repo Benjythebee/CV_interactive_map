@@ -130,6 +130,13 @@ margin:auto;
     })
       CVmap.on('click', onMapClick)// Listen to clicks
     </script>
+    <script src="app.js"></script>
+    <script>  $(() => {
+      $(window).on('load',() => {
+           app.getData();
+          
+      })
+    })</script>
     </body>
 
     <!--/container-->
