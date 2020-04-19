@@ -52,7 +52,7 @@ app={
             $('.leaflet-popup').find('.title_name').html("<strong>"+title+"</strong>")
             $('.leaflet-popup').find('.title_owner').html("<strong>"+owner+"</strong>")
             $('.leaflet-popup').find('.collab_box').html(contributors)
-        },200)
+        },800)
         
       },
       onEachFeature: async (feature, layer) => {// bind click to every feature
