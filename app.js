@@ -22,6 +22,15 @@ app={
                   "contributors":parcel_coordinates[i-1].contributors}
               ,"geometry":square})
             }
+            var exteriorStyle = {
+                "color": "#ffffff",
+                "weight": 0,
+                "fillOpacity": 0,// Hide all the features
+                "opacity":0
+            };
+            parcel_means.parcels.forEach(parcel => {
+                L.geoJSON(parcel,{style: exteriorStyle,onEachFeature: app.onEachFeature}).addTo(CVmap);
+        });
     },
     getDataLocal: async (location) => {
             // if we have a local file or a pre-formatted geoJSON file
