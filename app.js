@@ -1,5 +1,5 @@
 app={
-    getDataLocal: async (location) => {
+    getDataLocal: async () => {
             // if we have a local file or a pre-formatted geoJSON file
 
 
@@ -29,12 +29,12 @@ app={
             owner = e.target.feature.properties.owner.slice(0, 9);
         }
         var contributors = 'contributors:'
-        console.log(e.target.feature.properties.contributors)// Get the contributors and show in list
+                                            // Get the contributors and show in list
         if(e.target.feature.properties.contributors!=null && e.target.feature.properties.contributors[0]!=""){
             
             contributors+="<ul style='margin-top: 0;'>"
             for(i=0;i<e.target.feature.properties.contributors.length;i++){
-                console.log(contributors)
+
                 var item = "<li>"+e.target.feature.properties.contributors[i].slice(0, 6)+"</li>"
                 contributors+=item
             }
