@@ -48,11 +48,16 @@ app={
         }
         // Setting up the popup content
         // Setting a setTimeout cause the object is not created on the click ( a bit slow)
-        setTimeout(()=>{
+        popupWindow.on('popupOpen',e=>{
             $('.leaflet-popup').find('.title_name').html("<strong>"+title+"</strong>")
             $('.leaflet-popup').find('.title_owner').html("<strong>"+owner+"</strong>")
             $('.leaflet-popup').find('.collab_box').html(contributors)
-        },800)
+        })
+        /*setTimeout(()=>{
+            $('.leaflet-popup').find('.title_name').html("<strong>"+title+"</strong>")
+            $('.leaflet-popup').find('.title_owner').html("<strong>"+owner+"</strong>")
+            $('.leaflet-popup').find('.collab_box').html(contributors)
+        },1200)*/
         
       },
       onEachFeature: async (feature, layer) => {// bind click to every feature
