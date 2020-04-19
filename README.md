@@ -30,8 +30,9 @@ The function
 >SetView()
 
 has two arguments: 
--One, an array [X,Y] defining the intial center. A positive X means it's east and a positive Y means north. 
--The second argument is the initial zoom.
+
+* One, an array [X,Y] defining the intial center. A positive X means it's east and a positive Y means north. 
+* The second argument is the initial zoom.
 
 For more info on leaflet functions: [the Leaflet Documentation](https://leafletjs.com/reference-1.6.0.html#map-methods-for-modifying-map-state)
 
