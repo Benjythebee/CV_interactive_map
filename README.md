@@ -1,8 +1,13 @@
 ###### CV interactive Map
  An interactive map that displays in-world for Cryptovoxels by [Fayelure](https://twitter.com/Benjythebee), with resources from [Fayelure](https://cryptovoxels.com) and [Leaflet](https://leafletjs.com/).
 [See demo centered at Origin City Market](https://benjythebee.github.io/CV_interactive_map/index.html)
+![Demonstration](https://benjythebee.github.io/CV_interactive_map/Thumbnail.png)
 
-The map is initialized with 
+The map is initialized with an html div
+```
+<div id="cvmap" style="height: 700px; position: relative; outline: none;">
+```
+and the following script
 ```
        var CVmap = L.map('cvmap').setView([1.80, 0.98], 9);
       /* Load the tileLayer x and y*/
@@ -22,6 +27,8 @@ has two arguments:
 To convert Cryptovoxels' coordinates to [X,Y], just divide the CV's coords by 100.
 
 For more info on leaflet functions: [the Leaflet Documentation](https://leafletjs.com/reference-1.6.0.html#map-methods-for-modifying-map-state)
+
+The rest of the script element is for markers and popups
 
  The content of the popup is in:
  ```
