@@ -48,7 +48,7 @@ app={
         }
         // Setting up the popup content
         // Setting a setTimeout cause the object is not created on the click ( a bit slow)
-        popupWindow.on('popupOpen',e=>{
+        popupWindow.on('popupopen',e=>{
             $('.leaflet-popup').find('.title_name').html("<strong>"+title+"</strong>")
             $('.leaflet-popup').find('.title_owner').html("<strong>"+owner+"</strong>")
             $('.leaflet-popup').find('.collab_box').html(contributors)
