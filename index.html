@@ -63,7 +63,7 @@
           iconAnchor:   [34, 94], // point of the icon which will correspond to marker's location
           shadowAnchor: [6, 61],  // the same for the shadow
       });
-      L.marker([1.80, 0.98], {icon: ocmIcon}).bindLabel( "Origin City Market", { direction: 'right' }).addTo(CVmap);
+      L.marker([1.80, 0.98], {icon: ocmIcon,title:"Origin City Market"}).addTo(CVmap);
 
       var popupWindow = L.popup() /* create popup object */
 
