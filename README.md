@@ -1,7 +1,7 @@
 ###### CV interactive Map
  An interactive map that displays in-world for Cryptovoxels by [Fayelure](https://twitter.com/Benjythebee), with resources from [Fayelure](https://cryptovoxels.com) and [Leaflet](https://leafletjs.com/).
 [See demo centered at Origin City Market](https://benjythebee.github.io/CV_interactive_map/index.html)
-![Demonstration](https://benjythebee.github.io/CV_interactive_map/Thumbnail.PNG)
+![Demonstration](https://benjythebee.github.io/CV_interactive_map/img/Thumbnail.PNG)
 
 The map is initialized with an html div
 ```
