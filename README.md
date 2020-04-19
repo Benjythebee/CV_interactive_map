@@ -1,7 +1,7 @@
 ###### CV interactive Map
  An interactive map that displays in-world for Cryptovoxels by [Fayelure](https://twitter.com/Benjythebee), with resources from [Fayelure](https://cryptovoxels.com) and [Leaflet](https://leafletjs.com/).
 [See demo centered at Origin City Market](https://benjythebee.github.io/CV_interactive_map/index.html)
-![Demonstration](https://benjythebee.github.io/CV_interactive_map/Thumbnail.png)
+![Demonstration](https://benjythebee.github.io/CV_interactive_map/Thumbnail.PNG)
 
 The map is initialized with an html div
 ```
@@ -40,6 +40,8 @@ The rest of the script element is for markers and popups
 Note Cryptovoxels is in an iframe and has the flag "&mode=orbit". For more info on flags visit [the Cryptovoxels Documentation](https://www.cryptovoxels.com/docs/flags)
 You can edit the size of the iframe by editing the *style* tag in the HTML code.
 
-It is important that the leaflet map is in a "defined" size container.
+**Also note that if a user is not connected to Cryptovoxels, that person will be spammed by metamask to connect. If anyonw has a solution for that please let me know.**
+
+It is important that the leaflet map is in a "defined" size container Or that it has a defined size.
 
 
