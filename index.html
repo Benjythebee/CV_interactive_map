@@ -58,12 +58,12 @@
           iconUrl: 'OCM_marker.png',
           shadowUrl: 'OCM_marker_shad.png',
 
-          iconSize:     [38, 95], // size of the icon
-          shadowSize:   [50, 64], // size of the shadow
-          iconAnchor:   [15, 2], // point of the icon which will correspond to marker's location
-          shadowAnchor: [3, 15],  // the same for the shadow
+          iconSize:     [45, 95], // size of the icon
+          shadowSize:   [69, 64], // size of the shadow
+          iconAnchor:   [34, 94], // point of the icon which will correspond to marker's location
+          shadowAnchor: [6, 61],  // the same for the shadow
       });
-      L.marker([1.80, 0.98], {icon: ocmIcon}).addTo(CVmap);
+      L.marker([1.80, 0.98], {icon: ocmIcon}).bindLabel( "Origin City Market", { direction: 'right' }).addTo(CVmap);
 
       var popupWindow = L.popup() /* create popup object */
 
