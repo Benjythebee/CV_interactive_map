@@ -53,17 +53,18 @@ The rest of the script element is for markers and popups
  
  Note Cryptovoxels is in an iframe and has the flag "&mode=orbit". For more info on flags visit [the Cryptovoxels Documentation](https://www.cryptovoxels.com/docs/flags)
 You can edit the size of the iframe by editing the *style* tag in the HTML code.
+
  <hr/>
 
-##UPDATE
+## UPDATE
 
  The map now shows info of the parcel by getting it from the Cryptovoxels API. In app.js there are two function that calls for data.
-*getDataLocal() which take a file that has already been formated to geoJSON.
+* getDataLocal() which take a file that has already been formated to geoJSON.
  if you don't know how to convert the data to geoJSON, feel free to use this url: https://benjythebee.github.io/parceldata/parcels.owner&contributors.json
 or https://benjythebee.github.io/parceldata/parcels.geo.json 
 and 
 
-*getDataGET() which takes straight up from cryptovoxels.com and converts it to geoJSON. PROBLEM IS: I haven't tested that function because I keep getting CORS issues
+* getDataGET() which takes straight up from cryptovoxels.com and converts it to geoJSON. PROBLEM IS: I haven't tested that function because I keep getting CORS issues
 
 The JSON files in the api folder are geoJSON formatted. For example the parcels.owner&contributors.json file looks a bit like this:
 ```
