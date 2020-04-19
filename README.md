@@ -1,6 +1,6 @@
 
 # CV interactive Map
- An interactive map that displays in-world for Cryptovoxels. 
+ An interactive map that displays in-world in Cryptovoxels and give parcel informations
 
 [See demo centered at Origin City Market](https://benjythebee.github.io/CV_interactive_map/index.html)
 <br>
