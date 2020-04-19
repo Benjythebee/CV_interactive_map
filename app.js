@@ -1,37 +1,4 @@
 app={
-    getDataGET: async (location) => {
-// If we want to get the Cryptovoxels api (we have to convert it to geoJSON first)
-        const d = await $.getJSON("https://www.cryptovoxels.com/api/parcels.json");
-        console.log(d)
-        let info = d
-            let parcel_coordinates = info.parcels
-            console.log("loaded the file")
-          
-            var parcel_means={"parcels":[]}
-            for(i=1;i<=parcel_coordinates.length;i++){
-              console.log(parcel_coordinates[i-1])
-              let square=parcel_coordinates[i-1].geometry
-              parcel_means.parcels.push({
-                "type": "Feature",
-              "properties": {
-                  "name": parcel_coordinates[i-1].name,
-                  "id":i,
-                  "address":parcel_coordinates[i-1].address,
-                  "owner":parcel_coordinates[i-1].owner,
-                  "owner_name":parcel_coordinates[i-1].owner_name,
-                  "contributors":parcel_coordinates[i-1].contributors}
-              ,"geometry":square})
-            }
-            var exteriorStyle = {
-                "color": "#ffffff",
-                "weight": 0,
-                "fillOpacity": 0,// Hide all the features
-                "opacity":0
-            };
-            parcel_means.parcels.forEach(parcel => {
-                L.geoJSON(parcel,{style: exteriorStyle,onEachFeature: app.onEachFeature}).addTo(CVmap);
-        });
-    },
     getDataLocal: async (location) => {
             // if we have a local file or a pre-formatted geoJSON file
 
@@ -93,5 +60,40 @@ app={
           layer.on({
               click: app.whenClicked
           });
-      }
+      },
+      getDataGET: async (location) => {// If we want to get the Cryptovoxels api (we have to convert it to geoJSON first) 
+        //Might face some CORS problems
+        
+                const d = await $.getJSON("https://www.cryptovoxels.com/api/parcels.json");
+        
+                console.log(d)
+                let info = d
+                    let parcel_coordinates = info.parcels
+                    console.log("loaded the file")
+                  
+                    var parcel_means={"parcels":[]}
+                    for(i=1;i<=parcel_coordinates.length;i++){
+                      console.log(parcel_coordinates[i-1])
+                      let square=parcel_coordinates[i-1].geometry
+                      parcel_means.parcels.push({
+                        "type": "Feature",
+                      "properties": {
+                          "name": parcel_coordinates[i-1].name,
+                          "id":i,
+                          "address":parcel_coordinates[i-1].address,
+                          "owner":parcel_coordinates[i-1].owner,
+                          "owner_name":parcel_coordinates[i-1].owner_name,
+                          "contributors":parcel_coordinates[i-1].contributors}
+                      ,"geometry":square})
+                    }
+                    var exteriorStyle = {
+                        "color": "#ffffff",
+                        "weight": 0,
+                        "fillOpacity": 0,// Hide all the features
+                        "opacity":0
+                    };
+                    parcel_means.parcels.forEach(parcel => {
+                        L.geoJSON(parcel,{style: exteriorStyle,onEachFeature: app.onEachFeature}).addTo(CVmap);
+                });
+            },
 }
