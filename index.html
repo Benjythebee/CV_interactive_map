@@ -133,7 +133,9 @@ margin:auto;
         
         // Here the content is orbit mode (&mode=obrit) For more information on the flags you want go to https://www.cryptovoxels.com/docs/flags
       }
-      popupWindow.on('popupclose',e=>{
+      //popupWindow
+      CVmap.on('popupclose',e=>{
+        console.log(e)
         $('#cvmap').find('iframe').attr('src',"")// Cleaning up the popup content to avoid having multiple Cryptovoxels processes
     })
       CVmap.on('click', onMapClick)// Listen to clicks
