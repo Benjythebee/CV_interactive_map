@@ -135,7 +135,6 @@ margin:auto;
       }
       //popupWindow
       CVmap.on('popupclose',e=>{
-        console.log(e)
         $('#cvmap').find('iframe').attr('src',"")// Cleaning up the popup content to avoid having multiple Cryptovoxels processes
     })
       CVmap.on('click', onMapClick)// Listen to clicks
