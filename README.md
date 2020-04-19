@@ -7,7 +7,8 @@
 <br>
 <center>
 <img src="https://benjythebee.github.io/CV_interactive_map/img/Thumbnail.PNG" width="275"></center>
---------------------------------------------------------------------------------
+<hr/>
+
 The map is initialized with an html div
 ```
 <div id="cvmap" style="height: 700px; position: relative; outline: none;">
@@ -32,7 +33,7 @@ has two arguments:
 
 For more info on leaflet functions: [the Leaflet Documentation](https://leafletjs.com/reference-1.6.0.html#map-methods-for-modifying-map-state)
 
---------------------------------------------------------------------------------
+<hr/>
 
 To convert Cryptovoxels' coordinates to [X,Y], just divide the CV's coords by 100.
 
@@ -45,7 +46,8 @@ The rest of the script element is for markers and popups
 `)
 
  ```
- -------------------------------------------------------------------------------
+ <hr/>
+ 
 Note Cryptovoxels is in an iframe and has the flag "&mode=orbit". For more info on flags visit [the Cryptovoxels Documentation](https://www.cryptovoxels.com/docs/flags)
 You can edit the size of the iframe by editing the *style* tag in the HTML code.
 
