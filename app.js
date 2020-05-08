@@ -109,12 +109,12 @@ app={
                 var i=0
 
                 
-                var heat = L.heatLayer(wompsCoord[0].womps,  {radius: 35, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }});
+                var heat = L.heatLayer(d[0].womps,  {radius: 35, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }});
                 CVmap.addLayer(heat);
 
                 L.control.liveupdate ({
                     update_map: function () {
-                        heat.setOptions(wompsCoord[i].womps,  {radius: 35, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }})
+                        heat.setOptions(d[i].womps,  {radius: 35, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }})
                         if(i==numTime){
                         i=0
                         }else{
