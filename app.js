@@ -144,7 +144,36 @@ app={
                     update_map: function () {
                         heat.setLatLngs(data[i].womps)
                         
-                        $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        if(i>=0 && i<=5){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Large activity in Shenzhen and Makers</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=6 && i<=9){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Sugar Club is partying in Rome</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=10 && i<=14){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Artists started bulding in Pranksyland + OCM activity</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=15 && i<=19){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Nostro doing some work in Hiro</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=20 && i<=23){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Sugar club is having a break, Nostro testing the womp on megavoxes</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=24 && i<=27){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Further activity in OCM</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=27 && i<=33){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=33 && i<=37){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Activity in Center, Junkyard and Punks</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=38 && i<=42){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Proxima Island is born.</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=42 && i<=48){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Reduced activity after auction was delayed</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=48 && i<=51){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Activity in Mars, Deep South, North Terrace and makers </span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=52 && i<=54){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Sudden surge on Proxima and activity in Le Marais </span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=55 && i<=58){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Things have quieted down, large activity in Modville/Junkyard/Proxima overnight</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }else if(i>=58 && i<=61){
+                            $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>Some activity in scripting</span><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        }
+                        
                         if(i>=numTime-1){
                         i=0
                         }else{
