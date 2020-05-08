@@ -103,7 +103,7 @@ app={
             },
             getheatmap: async ()=>{
 
-                const d = await $.getJSON("./Heatmapdata.json");
+                const d = await $.getJSON("https://benjythebee.github.io/parceldata/Heatmapdata.json");
                 
                 var numTime=d.length
                 var i=0
