@@ -12,7 +12,7 @@ app={
         "opacity":0
     };
     d.parcels.forEach(parcel => {
-        L.geoJSON(parcel,{style: exteriorStyle,onEachFeature: app.onEachFeature}).addTo(CVmap);
+        L.geoJSON(parcel,{onEachFeature: app.onEachFeature}).addTo(CVmap);
 });
 
                 
@@ -101,4 +101,29 @@ app={
                         L.geoJSON(parcel,{style: exteriorStyle,onEachFeature: app.onEachFeature}).addTo(CVmap);
                 });
             },
+            getheatmap: async ()=>{
+
+                const d = await $.getJSON("https://benjythebee.github.io/parceldata/Heatmapdata.json");
+                
+                var numTime=d.length
+                var i=0
+
+                
+                var heat = L.heatLayer(wompsCoord[0].womps,  {radius: 35, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }});
+                CVmap.addLayer(heat);
+
+                L.control.liveupdate ({
+                    update_map: function () {
+                        heat.setOptions(wompsCoord[i].womps,  {radius: 35, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }})
+                        if(i==numTime){
+                        i=0
+                        }else{
+                        i++
+                        }
+                    },
+                    interval: 500
+                })
+                .addTo(map)
+                .startUpdating();
+            }
 }
