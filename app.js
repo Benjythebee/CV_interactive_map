@@ -103,27 +103,57 @@ app={
             },
             getheatmap: async ()=>{
 
-                const d = await $.getJSON("https://benjythebee.github.io/parceldata/Heatmapdata.json");
-                console.log(d)
+                const d = await $.get("https://benjythebee.github.io/parceldata/Heatmapdata.json");
+                console.log(d.length)
                 var numTime=d.length
+                var data=[]
+                for(i=0;i<numTime;i++){
+                    data.push(JSON.parse(d[i]))
+                }
+                
+                
                 var i=0
 
                 
-                var heat = L.heatLayer(d[0].womps,  {radius: 35, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }});
+                var heat = L.heatLayer(data[0].womps,  {radius: 25, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }});
                 CVmap.addLayer(heat);
-
+                L.Control.textbox = L.Control.extend({
+                    onAdd: function(map) {
+                        
+                    var text = L.DomUtil.create('div');
+                    text.id = "info_text";
+                    text.innerHTML = "<strong>Date</strong>"
+                    return text;
+                    },
+            
+                    onRemove: function(map) {
+                        // Nothing to do here
+                    }
+                });
+                L.control.textbox = function(opts) { return new L.Control.textbox(opts);}
+                L.control.textbox({ position: 'topright' }).addTo(CVmap);
+                function parse(str) {
+                    var y = str.substr(0,4),
+                        m = str.substr(4,2) - 1,
+                        d = str.substr(6,2);
+                        h = str.substr(8,2);
+                    var D = new Date(y,m,d,h);
+                    return (D.getFullYear() == y && D.getMonth() == m && D.getDate() == d && D.getHours() == h) ? D : 'invalid date';
+                }
                 L.control.liveupdate ({
                     update_map: function () {
-                        heat.setOptions(d[i].womps,  {radius: 35, gradient:{0.1: 'blue', 0.3: 'lime', 1: 'red' }})
-                        if(i==numTime){
+                        heat.setLatLngs(data[i].womps)
+                        
+                        $("#info_text")[0].innerHTML="<strong>"+parse(data[i].time)+"</strong><br><span style='text-align: right; float:right;'>("+i+"/"+numTime+")</span>"
+                        if(i>=numTime-1){
                         i=0
                         }else{
                         i++
                         }
                     },
-                    interval: 500
+                    interval: 750
                 })
-                .addTo(map)
+                .addTo(CVmap)
                 .startUpdating();
             }
 }

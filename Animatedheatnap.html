@@ -18,6 +18,9 @@
   crossorigin=""></script>
     <!-- Load heatmap Leaflet -->
     <script src="./heat/fixedHeat.js"></script>
+
+    <link rel="stylesheet" href="leaflet-liveupdate.css" >
+    <script src="./leaflet-liveupdate.js"></script>
 <!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>CV interactive map</title>
@@ -65,10 +68,10 @@ margin:auto;
 
             <div class="container-fluid">
                   
-                    <div id="cvmap" style="height: 700px; position: relative; outline: none;">
+                    <div id="cvmap" style="height: 700px; width:700px; position: relative; outline: none; margin:auto">
 
                     </div>
-                    <div class="titleContainer"><h1 style="padding: 0.5rem;">Cryptovoxels Interactive Map</h1>
+                    <div class="titleContainer"><h2 style="padding: 0.5rem;">Cryptovoxels Interactive Map</h2>
                       <a href="https://twitter.com/Benjythebee" target="_blank"><img src="https://img.icons8.com/color/48/000000/twitter-circled.png"/></a>
 </div>
 
@@ -79,7 +82,7 @@ margin:auto;
     <script>  
        /* globals L, location */
 
-       var CVmap = L.map('cvmap').setView([1.86, 0.82], 9);
+       var CVmap = L.map('cvmap').setView([-0.733866518, -0.65478488], 6);
       /* Load the tileLayer x and y*/
       L.tileLayer(`https://map.cryptovoxels.com/tile?z={z}&x={x}&y={y}`, {
         minZoom: 3,
@@ -88,15 +91,6 @@ margin:auto;
         id: 'cryptovoxels'
       }).addTo(CVmap)
 
-      var ocmIcon = L.icon({ // inserting an OCM marker
-          iconUrl: 'img/OCM_marker.png',
-          shadowUrl: 'img/OCM_marker_shad.png',
-          iconSize:     [60, 82], // size of the icon
-          shadowSize:   [43, 64], // size of the shadow
-          iconAnchor:   [29, 80], // point of the icon which will correspond to marker's location
-          shadowAnchor: [5, 48],  // the same for the shadow
-      });
-      L.marker([1.86, 0.82], {icon: ocmIcon,title:"Origin City Market"}).addTo(CVmap);
 
       var popupWindow = L.popup() /* create popup object */
 
