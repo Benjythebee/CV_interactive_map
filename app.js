@@ -12,7 +12,7 @@ app={
         "opacity":0
     };
     d.parcels.forEach(parcel => {
-        L.geoJSON(parcel,{onEachFeature: app.onEachFeature}).addTo(CVmap);
+        L.geoJSON(parcel,{style: exteriorStyle,onEachFeature: app.onEachFeature}).addTo(CVmap);
 });
 
                 
@@ -70,8 +70,7 @@ app={
         //Might face some CORS problems
         
                 const d = await $.getJSON("https://www.cryptovoxels.com/api/parcels.json");
-        
-                console.log(d)
+
                 let info = d
                     let parcel_coordinates = info.parcels
                     console.log("loaded the file")
