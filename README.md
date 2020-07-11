@@ -64,7 +64,7 @@ You can edit the size of the iframe by editing the *style* tag in the HTML code.
 or https://benjythebee.github.io/parceldata/parcels.geo.json 
 and 
 
-* getDataGET() which takes straight up from cryptovoxels.com and converts it to geoJSON. PROBLEM IS: I haven't tested that function because I keep getting CORS issues
+* getDataGET() which takes straight up from cryptovoxels.com and converts it to geoJSON. It works fine only if you run it server side.
 
 The JSON files in the api folder are geoJSON formatted. For example the parcels.owner&contributors.json file looks a bit like this:
 ```
